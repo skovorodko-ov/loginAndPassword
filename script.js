@@ -41,6 +41,7 @@ btnNewUser.addEventListener('click', function () {
 
   if (userName.split(' ').length > 2 || userName.trim() === '') {
     alert('не верно ведены имя и фамилия');
+    return;
   } else {
     user.name = userName.split(' ')[0];
     user.lastName = userName.split(' ')[1];
@@ -49,7 +50,18 @@ btnNewUser.addEventListener('click', function () {
   }
 
   user.nikName = prompt('Введите свой логин', 'Anaken817');
+
+  if (user.nikName === null || user.nikName.trim() === '') {
+    alert('не верный формат логина!');
+    return;
+  }
+
   user.password = prompt('Введите пароль', '12345');
+
+    if (user.password === null || user.password.trim() === '') {
+    alert('не верный формат пароля!');
+    return;
+  }
 
   usersData.push(user);
   addUserOnPage(user);
