@@ -39,7 +39,7 @@ btnNewUser.addEventListener('click', function () {
     return;
   }
 
-  if (userName.split(' ').length > 2 || userName.trim() === '') {
+  if (userName.split(' ').length > 2 || userName.trim() === '' || userName.split(' ').length === 1) {
     alert('не верно ведены имя и фамилия');
     return;
   } else {
